@@ -5,10 +5,18 @@
   <title>Careers</title>
 </head>
 <body>
-
   <h1>Join Our Team</h1>
-  <!-- Paycor job iframe embed -->
-  <script id="gnewtonjs" type="text/javascript" src="https://recruitingbypaycor.com/career/iframe.action?clientId=8a7883c683620a4f018366d9f2640156"></script>
-
+  <div id="paycor-careers">
+    <script id="gnewtonjs" type="text/javascript" src="https://recruitingbypaycor.com/career/iframe.action?clientId=8a7883c683620a4f018366d9f2640156"></script>
+    <p id="fallback" style="display: none;">Unable to load job listings. Please visit our <a href="https://recruitingbypaycor.com">Careers page</a>.</p>
+  </div>
+  <script>
+    // Check if the script loaded successfully
+    window.onload = function() {
+      if (!document.getElementById('gnewtonjs').complete) {
+        document.getElementById('fallback').style.display = 'block';
+      }
+    };
+  </script>
 </body>
 </html>
